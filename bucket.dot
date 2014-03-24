@@ -1,0 +1,36 @@
+digraph G {
+    nodesep=.05
+    rankdir=LR;
+    node [shape=record, width=.1, height=.1];
+    
+    bucket [label = "<f0> 1 | <f1> 2 | <f2> ... | <f3> 1000", height=2.5]
+    
+    a1 [shape=ellipse label = "player"]
+    b1 [shape=ellipse label = "player"]
+    c1 [shape=ellipse label = "..."]
+    d1 [shape=ellipse label = "player"]
+    a1 -> b1 -> c1 -> d1
+    bucket:f0 -> a1
+    
+    a2 [shape=ellipse label = "player"]
+    b2 [shape=ellipse label = "player"]
+    c2 [shape=ellipse label = "..."]
+    d2 [shape=ellipse label = "player"]
+    a2 -> b2 -> c2 -> d2
+    bucket:f1 -> a2
+    
+    a3 [shape=ellipse label = "player"]
+    b3 [shape=ellipse label = "player"]
+    c3 [shape=ellipse label = "..."]
+    d3 [shape=ellipse label = "player"]
+    a3 -> b3 -> c3 -> d3
+    bucket:f2 -> a3
+
+    a4 [shape=ellipse label = "player"]
+    b4 [shape=ellipse label = "player"]
+    c4 [shape=ellipse label = "..."]
+    d4 [shape=ellipse label = "player"]
+    a4 -> b4 -> c4 -> d4
+    bucket:f3 -> a4    
+    
+}
