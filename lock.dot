@@ -1,0 +1,39 @@
+digraph G {
+    begin [label = "开始" shape = record color = black fontname="FangSong"]
+    end [label = "结束" shape = circle fontname="FangSong"]
+    
+    subgraph cluster_restart {
+        node [color = black fontname="FangSong"];
+        color=red;
+        
+        subgraph cluster_start {
+            node [style = filled color = green fontname="FangSong"];
+            label = "start"
+            style = filled
+            color = purple
+            
+            justy [label = "没上锁" shape = diamond]
+            firstlock [label = "锁上"]
+            start [label = "启动程序"]
+            secondlock  [label = "锁上"]
+            remain[label = "收尾工作"]
+            unlock[label = "解锁"]
+        }
+
+
+        subgraph cluster_stop {
+            node [style = filled color = purple fontname="FangSong"];
+            color=green;
+            style = filled
+            label = "stop";
+            
+            stop [label = "解锁" ]
+        }
+    }
+    
+    begin -> justy -> firstlock-> start -> secondlock -> remain -> unlock -> end
+    begin -> stop -> end
+    begin -> stop -> justy -> end
+
+    
+}
