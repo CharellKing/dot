@@ -1,0 +1,8 @@
+digraph {
+    rankdir=LR;
+    program [label = "program" shape = "box"]
+    cache   [label = "cache", shape = "septagon" color = red style = filled]
+    db      [label = "db", shape = "tripleoctagon" color = lightblue style = filled]
+
+    program -> cache -> db
+}
